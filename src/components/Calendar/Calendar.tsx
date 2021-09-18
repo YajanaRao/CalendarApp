@@ -10,14 +10,14 @@ import { DefaultTheme } from '../../theme';
 import { months } from './const';
 import { generateMatrix } from './utils';
 
-function Calendar({ date = new Date() }: { date: Date }) {
-  const [activeDate, setActiveDate] = React.useState(date);
+function Calendar({ current = new Date() }: { current: Date }) {
+  const [activeDate, setActiveDate] = React.useState(current);
 
   React.useEffect(() => {
-    if (activeDate != date) {
-      setActiveDate(date);
+    if (activeDate != current) {
+      setActiveDate(current);
     }
-  }, [date]);
+  }, [current]);
 
   const _onPress = (item: number) => {
     if (typeof item !== 'string' && item != -1) {

@@ -45,7 +45,10 @@ export default function App() {
       <ScrollView style={styles.container}>
         <View style={styles.center}>
           <View style={styles.card}>
-            <Calendar date={value} />
+            <Calendar
+              // Initially visible day, week, month and year. Default = Date()
+              current={value}
+            />
           </View>
           <View style={[styles.card, styles.jumpToDateCard]}>
             <Text style={styles.title}>Jump to the date</Text>
